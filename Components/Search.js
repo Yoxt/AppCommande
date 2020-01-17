@@ -5,9 +5,9 @@ import PlatItem from './platItem'
 
 class Search extends React.Component {
 
-    _displayDetailForFilm = (idPlat) => {
+    _displayDetailForFilm = (idPlat , nom, avatar, description) => {
         console.log("Display plat with id " + idPlat)
-        this.props.navigation.navigate("PlatDetail", { idPlat: idPlat })
+        this.props.navigation.navigate("PlatDetail", { idPlat: idPlat , nom:nom , avatar: avatar, description:description})
 
       }
       _goToPanier = () =>{

@@ -7,7 +7,7 @@ class PlatItem extends React.Component {
 render() {
     const { plat, displayDetailForFilm } = this.props
     return (
-      <TouchableOpacity style={styles.main_container} onPress={() => displayDetailForFilm(plat.id)}>
+      <TouchableOpacity style={styles.main_container} onPress={() => displayDetailForFilm(plat.id,plat.name,plat.avatar, plat.description)}>
         <Image
           style={styles.image}
           source={{uri: plat.avatar}}
