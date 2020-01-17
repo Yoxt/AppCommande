@@ -3,6 +3,7 @@ import { createAppContainer } from 'react-navigation';
 
 import Search from '../Components/Search'
 import PlatDetail from '../Components/platDetail';
+import Panier from '../Components/Panier'
 
 
 const SearchStackNavigator = createStackNavigator({
@@ -14,7 +15,15 @@ const SearchStackNavigator = createStackNavigator({
     },
     PlatDetail: { // Encore une fois j'ai mis le même nom que celui du component mais libre à vous de choisir un nom différent
     screen: PlatDetail
-  }
+    },
+    Panier: {
+        screen: Panier,
+        navigationOptions:{
+            title:'Votre panier'
+        }
+    }
+
+
   })
 
 
