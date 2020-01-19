@@ -1,36 +1,18 @@
 
 import React from 'react'
 import { StyleSheet, View, Text, Image ,TouchableOpacity} from 'react-native'
-import { CheckBox } from 'react-native-elements'
 
-class PlatItem extends React.Component {
-    
-  constructor(props){
-    super(props);
- 
-    this.state = {
-      checked : false,
-    }
- }
- _onPressCheck = () => {
-  this.setState({checked: !this.state.checked});
-  this.props.plat.isChecked = !this.state.checked;
-  console.log(
-    this.props.plat.isChecked);
+class PanierListe extends React.Component {
 
-}
 render() {
-    const { plat, displayDetailForFilm} = this.props
+    const { plat} = this.props
     return (
-      <TouchableOpacity style={styles.main_container} onPress={() => displayDetailForFilm(plat.id,plat.name,plat.avatar, plat.description)}>
+      <View style={styles.main_container}>
         <Image
           style={styles.image}
           source={{uri: plat.avatar}}
         />
-         <CheckBox
-  checked={this.state.checked}
-  onPress={() =>this._onPressCheck()}
-/>
+        
        <View style={styles.content_container}>
           <View style={styles.header_container}>
               <Text style={styles.title_text}>{plat.name}</Text>            
@@ -42,19 +24,19 @@ render() {
             <Text style={styles.date_text}>id: {plat.id}</Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
      )
     }
 }
 
 const styles = StyleSheet.create({
     main_container: {
-      height: 190,
+      height: 120,
       flexDirection: 'row'
     },
     image: {
-      width: 120,
-      height: 180,
+      width: 80,
+      height: 80,
       margin: 5,
       backgroundColor: 'gray'
     },
@@ -68,7 +50,7 @@ const styles = StyleSheet.create({
     },
     title_text: {
       fontWeight: 'bold',
-      fontSize: 20,
+      fontSize: 14,
       flex: 1,
       flexWrap: 'wrap',
       paddingRight: 5
@@ -94,4 +76,4 @@ const styles = StyleSheet.create({
     }
   })
   
-export default PlatItem
+export default PanierListe
